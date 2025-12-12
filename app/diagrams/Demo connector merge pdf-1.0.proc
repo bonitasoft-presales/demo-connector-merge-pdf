@@ -33,13 +33,6 @@
               <operator xmi:type="expression:Operator" xmi:id="_afDv5Nc9EfCpdJwScdWC8w" type="DOCUMENT_CREATE_UPDATE"/>
             </outputs>
           </connectors>
-          <operations xmi:type="expression:Operation" xmi:id="_obWd4Nc4EfCpdJwScdWC8w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_obXE8Nc4EfCpdJwScdWC8w" name="mergedDocument" content="mergedDocument" type="DOCUMENT_REF_TYPE">
-              <referencedElements xmi:type="process:Document" xmi:id="_obXE8dc4EfCpdJwScdWC8w" name="mergedDocument"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_obXE8tc4EfCpdJwScdWC8w" name="" content=""/>
-            <operator xmi:type="expression:Operator" xmi:id="_obXE9Nc4EfCpdJwScdWC8w" type="DOCUMENT_CREATE_UPDATE"/>
-          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_QBldutc4EfCpdJwScdWC8w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_QBldu9c4EfCpdJwScdWC8w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_QBldvNc4EfCpdJwScdWC8w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
