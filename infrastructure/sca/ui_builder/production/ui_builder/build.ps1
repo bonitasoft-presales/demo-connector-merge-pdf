@@ -1,0 +1,1 @@
+docker build  -t uib-hr-management:1.0 . --build-arg BASE=bonitasoft.jfrog.io/docker-releases/bonita-ui-builder --build-arg VERSION=1.0.0-beta.1 --build-arg WORKSPACE=./workspace/

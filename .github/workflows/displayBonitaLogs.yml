@@ -1,0 +1,45 @@
+name: Get bonita containers logs
+
+on:
+  workflow_dispatch:
+    inputs:
+      Bonita_DNS:
+        description: "bonita DNS name ?"
+        required: true
+        default: "ec2-3-254-134-132.eu-west-1.compute.amazonaws.com"
+
+jobs:
+  Display_Params:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display Bonita_DNS value
+        run: |
+          echo "Bonita_DNS: ${{ inputs.Bonita_DNS }}"
+
+  Get_Bonita_logs:
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    with:
+      bonita_dns_name: ${{ inputs.Bonita_DNS }}
+      bonita_service: 'bonita'
+    secrets: inherit
+
+  Get_Bonita_DB_logs:
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    with:
+      bonita_dns_name: ${{ inputs.Bonita_DNS }}
+      bonita_service: 'postgresql'
+    secrets: inherit
+
+  Get_UIB_logs:
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    with:
+      bonita_dns_name: ${{ inputs.Bonita_DNS }}
+      bonita_service: 'bonita-ui'
+    secrets: inherit
+
+  Get_UI_proxy_logs:
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    with:
+      bonita_dns_name: ${{ inputs.Bonita_DNS }}
+      bonita_service: 'bonita-ui-proxy'
+    secrets: inherit

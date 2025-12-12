@@ -1,0 +1,35 @@
+{
+  "id" : "customButtonGroup",
+  "name" : "ButtonGroup",
+  "type" : "widget",
+  "custom" : true,
+  "modelVersion" : "2.6",
+  "previousArtifactVersion" : "2.4",
+  "lastUpdate" : 1702989926453,
+  "template" : "@customButtonGroup.tpl.html",
+  "controller" : "@customButtonGroup.ctrl.js",
+  "properties" : [
+    {
+      "label" : "Button list",
+      "name" : "buttons",
+      "type" : "collection",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Alignment",
+      "name" : "alignment",
+      "type" : "choice",
+      "defaultValue" : "left",
+      "choiceValues" : [
+        "left",
+        "center",
+        "right"
+      ],
+      "bond" : "constant"
+    }
+  ],
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "webResources" : [ ],
+  "hasHelp" : false
+}

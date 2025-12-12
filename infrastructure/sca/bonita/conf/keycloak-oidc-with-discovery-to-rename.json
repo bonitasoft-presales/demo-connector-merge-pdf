@@ -1,0 +1,19 @@
+{
+  "realm": "bonita",
+  "resource": "bonitaOIDC",
+  "auth-server-url": "${HOSTNAME}:9090",
+  "discovery-url": "{auth-server-url}/realms/{realm-name}/.well-known/openid-configuration",
+  "jwt-access-token": false,
+  "scope-values": "openid profile email",
+  "save-target-url-in-state": true,
+  "ssl-required": "external",
+  "principal-attribute": "preferred_username",
+  "public-client": false,
+  "autodetect-bearer-only": true,
+  "enable-cors": true,
+  "cors-allowed-methods": "POST, PUT, DELETE, GET",
+  "redirect-uri-path": "/bonita/keycloak",
+  "credentials" : {
+     "secret" : "15f53c94-efc4-4367-9b7c-dd484faa9c00"
+   }
+}

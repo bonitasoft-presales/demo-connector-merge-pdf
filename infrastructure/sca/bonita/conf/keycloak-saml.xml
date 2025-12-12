@@ -1,0 +1,27 @@
+<keycloak-saml-adapter>
+    <SP entityID="bonitaSAML"
+        sslPolicy="EXTERNAL"
+        nameIDPolicyFormat="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+        forceAuthentication="false"
+        isPassive="false"
+        logoutPage="${HOSTNAME}:8090/bonita"
+        turnOffChangeSessionIdOnLogin="false">
+        <PrincipalNameMapping policy="FROM_ATTRIBUTE" attribute="username"/>
+        <IDP entityID="idp">
+            <SingleSignOnService signRequest="false"
+               validateResponseSignature="false"
+               validateAssertionSignature="false"
+               requestBinding="POST"
+               responseBinding="POST"
+               bindingUrl="${HOSTNAME}:9090/realms/bonita/protocol/saml"/>
+            <SingleLogoutService signRequest="false"
+               signResponse="false"
+               validateRequestSignature="false"
+               validateResponseSignature="false"
+               requestBinding="POST"
+               responseBinding="POST"
+               postBindingUrl="${HOSTNAME}:9090/realms/bonita/protocol/saml"
+               redirectBindingUrl="${HOSTNAME}:9090/realms/bonita/protocol/saml"/>
+        </IDP>
+     </SP>
+</keycloak-saml-adapter>

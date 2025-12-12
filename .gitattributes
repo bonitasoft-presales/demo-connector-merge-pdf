@@ -1,0 +1,8 @@
+* text=auto
+*.organization text=auto
+*.connectorconfig text=auto
+*.proc text=auto
+Jenkinsfile text=auto
+
+*.png binary
+*.jpg binary

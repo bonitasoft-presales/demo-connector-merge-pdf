@@ -1,0 +1,207 @@
+= Customize generation templates
+:toc:
+:bonita-version: 7.12
+
+To generate the documentation of a Bonita project we use the https://docs.groovy-lang.org/next/html/documentation/template-engines.html#_the_markuptemplateengine[Groovy template engine^]. 
+You can edit those templates to suit your need.
+
+[NOTE]
+====
+The output of the generation must be a valid https://asciidoctor.org/[Asciidoctor^] document.
+====
+
+== Template files
+
+Template files are organized in packages and use the _.tpl_ extension. The root file is _src/master_template.tpl_, this file must exist as it is the entry point of the generation.
+The other templates files are split by categories (bdm, process...).
+
+The template engine uses the https://docs.groovy-lang.org/next/html/documentation/template-engines.html#\_layouts[layout^] method to compose multiple templates. The https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/model/Project.html[Project^] model is given in input and contains all the project data.
+
+Using the layout method you may call a template with a subset of the project model (eg: the `src/process/diagram_template.tpl` only have a https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/model/process/Diagram.html[Diagram^] in its context).
+
+Template files are written in Groovy, and extend https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/AsciiDocTemplate.html[AsciiDocTemplate^].
+You can declare the context of the template using the `@Field` annotation (only use for IDE integration).
+
+For more information on how to edit templates see <<Edit templates>> section. 
+
+== Localization
+
+The generated documentation contains generic words that can be translated.
+
+Bonita already provides localization for French, Spanish and Portuguese (Brazilian), but it is possible to add a new locale (or edit existing ones).
+
+Localization keys are stored in _src/messages__[language tag]_.properties_.
+
+To use an internationalization key in a template you must use the https://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html#getString(java.lang.String)[ResourceBundle#getString^] method.
+The `ResourceBundle` must be put in the template context when using the layout method.
+
+[NOTE]
+====
+Supported language tags can be found in https://www.oracle.com/technetwork/java/javase/java8locales-2095355.html[Oracle Java Locale documentation^]
+====
+
+[WARNING]
+====
+Only the generic words used in the templates can be translated.
+====
+
+== Edit templates
+
+=== Remove documentation parts
+
+You can comment lines or code blocks in the templates like this
+
+.src/master_template.tpl
+[source,groovy]
+----
+...
+//if (project.businessDataModel) layout 'bdm/bdm_template.tpl', businessDataModel:project.businessDataModel, messages:messages <1>
+
+if (project.diagrams) {
+   newLine()
+   section 2, messages.getString('diagrams')
+   newLine()
+   project.diagrams.each { Diagram diagram -> 
+       layout 'process/diagram_template.tpl', diagram:diagram, messages:messages 
+   }
+}
+
+/* if (project.organization) { <2> 
+    layout 'organization/organization_template.tpl', organization:project.organization, messages:messages
+}*/
+...
+----
+<1> Comment a single line using `//`. Commenting this line will skip the BDM section when generating.
+<2> Commenting a code block using `/\*...*/`. Commenting this block will skip the Organization section when generating.
+
+=== Include static content
+
+Using the asciidoc `include::` directive, you can embed another `.adoc` file in the generated documentation.
+This static document can be stored in the `documentation/static` folder.
+Then you can include this document in the generation templates.
+
+.src/master_template.tpl
+[source,groovy]
+----
+...
+
+write 'include::documentation/static/customDoc.adoc[]' <1> <2>
+
+newLine() <3>
+
+if (project.businessDataModel) layout 'bdm/bdm_template.tpl', businessDataModel:project.businessDataModel, messages:messages
+
+if (project.diagrams) {
+   newLine()
+   section 2, messages.getString('diagrams')
+   newLine()
+   project.diagrams.each { Diagram diagram -> 
+       layout 'process/diagram_template.tpl', diagram:diagram, messages:messages 
+   }
+}
+
+if (project.organization) {
+    layout 'organization/organization_template.tpl', organization:project.organization, messages:messages
+}
+...
+----
+<1> `write` in the output document
+<2> Add the `include::` directive with the relative path to the static document
+<3> Add a new line in the output document
+
+== Helper methods and objects
+
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/AsciiDocTemplate.html#write(boolean,%20java.lang.Object)[write^]: writes _content_ in the output document
++
+[source,groovy]
+----
+write 'Hello world' <1>
+write "Hello $name" <2>
+write '''Hello
+         world''' <3>
+write """Hello
+         $name""" <4>
+----
+<1> Takes a `String` as argument.
+<2> Takes a `GString` as argument. GString supports variable interpolation.
+<3> Takes a multi-line `String` as argument.
+<4> Takes a  multi-line `GString` as argument. GString supports variable interpolation.
++
+[NOTE]
+====
+More information on Strings in Groovy http://groovy-lang.org/syntax.html#all-strings[here^].
+====
++
+
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/AsciiDocTemplate.html#attr(java.lang.Object,%20java.lang.Object)[attr^]: Writes an https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attribute] in the output document. The `defaultValue` is optional.
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/AsciiDocTemplate.html#section(int,%20java.lang.Object)[section^]: Writes an https://asciidoctor.org/docs/user-manual/#sections[asciidoc section] in the document.
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/Table.html[Table^]: Helper class to create an https://asciidoctor.org/docs/user-manual/#tables[asciidoc table].
++
+.Table example
+[source,groovy]
+----
+write new Table(headers : ['Name', 'Type', 'Description'], <1>
+                columnsFormat: ['1','1e','3a'], <2>
+                columms : [ <3>
+	                          ['firstName','lastName','birtDate'], 
+	                          ['String', 'String', 'LocalDate'], 
+	                          ['First name of the user','Last name of the user','The birth date of the user']
+                          ])
+----
+<1> The list of column names
+<2> the columns format used to define column size, alignment and style.
+<3> The list of column values
++
+.Asciidoc output
+[source,asciidoc]
+----
+[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
+|===
+|Name     |Type     |Description               
+|firstName|String   |First name of the user    
+|lastName |String   |Last name of the user     
+|birtDate |LocalDate|The birth date of the user
+|===
+----
+
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/Block.html[Block^]: Helper class to create an https://asciidoctor.org/docs/user-manual/#blocks[asciidoc block].
++
+.Block example
+[source,groovy]
+----
+write new Block(caption : 'Code example', <1>
+                properties: ['source','groovy'], <2>
+                content : '"some groovy expression content"') <3>
+----
+<1> The caption for the block
+<2> The block properties
+<3> The block content
++
+.Asciidoc output
+[source,asciidoc]
+--
+.Code example
+[source,groovy]
+----
+"some groovy expression content"
+----
+--
+
+* https://documentation.bonitasoft.com/asciidoc-templating/groovydoc/{bonita-version}/org/bonitasoft/asciidoc/templating/XRef.html[XRef^]: Helper class to create and use https://asciidoctor.org/docs/user-manual/#xref[asciidoc cross references].
++
+.Actor XRef example
+[source,groovy]
+----
+write "${new XRef(id: 'My Process-1.0.actor.Employee').inlinedRefTag()}Employee" <1>
+newLine()
+write new XRef(id: 'My Process-1.0.actor.Employee', label: 'Employee').refLink() <2>
+----
+<1> Create a reference anchor using an id and `inlinedRefTag()` method
+<2> Create a link to this same references using the same id and a `label` and `refLink()` method
++
+.Asciidoc output
+[source,asciidoc]
+----
+[[_d3fb37f1-dd9e-3e73-b8ee-7a3eabd2b802]]Employee
+<<_d3fb37f1-dd9e-3e73-b8ee-7a3eabd2b802,Employee>>
+----

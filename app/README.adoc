@@ -1,0 +1,3415 @@
+= presales-BPM-Template
+Generated with Bonita
+v7.12.2, {docdate}
+:toc: left
+:toc-title: Table of contents
+:toclevels: 2
+:bonita-version: 7.12
+:imagesdir: ./documentation/images
+:icons: font
+:sectnums: numbered
+:sectanchors:
+:hardbreaks:
+:experimental:
+
+
+== presales-BPM-Template json descriptor
+
+
+.Json model
+[source,json]
+----
+{
+"businessDataModel": {
+"packages": [
+{
+"businessObjects": [
+{
+"uniqueConstraints": [
+                            
+],
+"rules": [
+                            
+],
+"defaultQueries": [
+{
+"parameters": [
+{
+"type": "Long",
+"description": null,
+"name": "persistenceId"
+}
+],
+"returnType": "Sample",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.persistenceId= :persistenceId\n",
+"description": null,
+"name": "findByPersistenceId"
+},
+{
+"parameters": [
+{
+"type": "Date",
+"description": null,
+"name": "sampleDateOld"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleDateOld= :sampleDateOld\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleDateOld"
+},
+{
+"parameters": [
+{
+"type": "LocalDate",
+"description": null,
+"name": "sampleDateOnly"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleDateOnly= :sampleDateOnly\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleDateOnly"
+},
+{
+"parameters": [
+{
+"type": "OffsetDateTime",
+"description": null,
+"name": "sampleDateTime"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleDateTime= :sampleDateTime\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleDateTime"
+},
+{
+"parameters": [
+{
+"type": "LocalDateTime",
+"description": null,
+"name": "sampleDateTimeNoTimeZone"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleDateTimeNoTimeZone= :sampleDateTimeNoTimeZone\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleDateTimeNoTimeZone"
+},
+{
+"parameters": [
+{
+"type": "Long",
+"description": null,
+"name": "sampleLong"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleLong= :sampleLong\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleLong"
+},
+{
+"parameters": [
+{
+"type": "Integer",
+"description": null,
+"name": "sampleInteger"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleInteger= :sampleInteger\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleInteger"
+},
+{
+"parameters": [
+{
+"type": "Double",
+"description": null,
+"name": "sampleDouble"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleDouble= :sampleDouble\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleDouble"
+},
+{
+"parameters": [
+{
+"type": "Float",
+"description": null,
+"name": "sampleFloat"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleFloat= :sampleFloat\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleFloat"
+},
+{
+"parameters": [
+{
+"type": "String",
+"description": null,
+"name": "sampleString"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleString= :sampleString\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleString"
+},
+{
+"parameters": [
+{
+"type": "String",
+"description": null,
+"name": "sampleText"
+},
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nWHERE s.sampleText= :sampleText\nORDER BY s.persistenceId",
+"description": null,
+"name": "findBySampleText"
+},
+{
+"parameters": [
+{
+"type": "int",
+"description": null,
+"name": "startIndex"
+},
+{
+"type": "int",
+"description": null,
+"name": "maxResults"
+}
+],
+"returnType": "List<Sample>",
+"sourceCode": "SELECT s\nFROM Sample s\nORDER BY s.persistenceId",
+"description": null,
+"name": "find"
+},
+{
+"parameters": [
+{
+"type": "Date",
+"description": null,
+"name": "sampleDateOld"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleDateOld= :sampleDateOld\n",
+"description": null,
+"name": "countForFindBySampleDateOld"
+},
+{
+"parameters": [
+{
+"type": "LocalDate",
+"description": null,
+"name": "sampleDateOnly"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleDateOnly= :sampleDateOnly\n",
+"description": null,
+"name": "countForFindBySampleDateOnly"
+},
+{
+"parameters": [
+{
+"type": "OffsetDateTime",
+"description": null,
+"name": "sampleDateTime"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleDateTime= :sampleDateTime\n",
+"description": null,
+"name": "countForFindBySampleDateTime"
+},
+{
+"parameters": [
+{
+"type": "LocalDateTime",
+"description": null,
+"name": "sampleDateTimeNoTimeZone"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleDateTimeNoTimeZone= :sampleDateTimeNoTimeZone\n",
+"description": null,
+"name": "countForFindBySampleDateTimeNoTimeZone"
+},
+{
+"parameters": [
+{
+"type": "Long",
+"description": null,
+"name": "sampleLong"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleLong= :sampleLong\n",
+"description": null,
+"name": "countForFindBySampleLong"
+},
+{
+"parameters": [
+{
+"type": "Integer",
+"description": null,
+"name": "sampleInteger"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleInteger= :sampleInteger\n",
+"description": null,
+"name": "countForFindBySampleInteger"
+},
+{
+"parameters": [
+{
+"type": "Double",
+"description": null,
+"name": "sampleDouble"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleDouble= :sampleDouble\n",
+"description": null,
+"name": "countForFindBySampleDouble"
+},
+{
+"parameters": [
+{
+"type": "Float",
+"description": null,
+"name": "sampleFloat"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleFloat= :sampleFloat\n",
+"description": null,
+"name": "countForFindBySampleFloat"
+},
+{
+"parameters": [
+{
+"type": "String",
+"description": null,
+"name": "sampleString"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleString= :sampleString\n",
+"description": null,
+"name": "countForFindBySampleString"
+},
+{
+"parameters": [
+{
+"type": "String",
+"description": null,
+"name": "sampleText"
+}
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\nWHERE s.sampleText= :sampleText\n",
+"description": null,
+"name": "countForFindBySampleText"
+},
+{
+"parameters": [
+                                    
+],
+"returnType": "Long",
+"sourceCode": "SELECT COUNT(s)\nFROM Sample s\n",
+"description": null,
+"name": "countForFind"
+}
+],
+"relations": [
+                            
+],
+"attributes": [
+{
+"multiple": false,
+"type": "Long",
+"description": null,
+"mandatory": true,
+"name": "persistenceId"
+},
+{
+"multiple": false,
+"type": "Date",
+"description": null,
+"mandatory": false,
+"name": "sampleDateOld"
+},
+{
+"multiple": false,
+"type": "LocalDate",
+"description": null,
+"mandatory": false,
+"name": "sampleDateOnly"
+},
+{
+"multiple": false,
+"type": "OffsetDateTime",
+"description": null,
+"mandatory": false,
+"name": "sampleDateTime"
+},
+{
+"multiple": false,
+"type": "LocalDateTime",
+"description": null,
+"mandatory": false,
+"name": "sampleDateTimeNoTimeZone"
+},
+{
+"multiple": false,
+"type": "Long",
+"description": null,
+"mandatory": false,
+"name": "sampleLong"
+},
+{
+"multiple": false,
+"type": "Integer",
+"description": null,
+"mandatory": false,
+"name": "sampleInteger"
+},
+{
+"multiple": false,
+"type": "Double",
+"description": null,
+"mandatory": false,
+"name": "sampleDouble"
+},
+{
+"multiple": false,
+"type": "Float",
+"description": null,
+"mandatory": false,
+"name": "sampleFloat"
+},
+{
+"multiple": false,
+"type": "String",
+"description": null,
+"mandatory": false,
+"name": "sampleString"
+},
+{
+"multiple": false,
+"type": "String",
+"description": null,
+"mandatory": false,
+"name": "sampleText"
+}
+],
+"packageName": "com.company.model",
+"indexes": [
+                            
+],
+"description": "Sample BDM with all available types",
+"customQueries": [
+                            
+],
+"name": "Sample"
+}
+],
+"name": "com.company.model"
+}
+]
+},
+"version": "7.12.2",
+"applicationDescriptors": [
+{
+"orphanPages": [
+                
+],
+"menus": [
+{
+"subMenus": [
+                        
+],
+"page": {
+"name": "bdmQueriesTest",
+"displayName": "Demo BDM queries"
+},
+"name": "Queries"
+}
+],
+"theme": "custompage_bootstrapdefaulttheme",
+"layout": "custompage_layoutBonita",
+"token": "bdmQueries",
+"profile": "User",
+"version": "1.0",
+"homePage": {
+"name": "bdmQueriesTest",
+"displayName": "Demo BDM queries"
+},
+"description": "",
+"displayName": "BDM Queries demo page"
+}
+],
+"email": null,
+"diagrams": [
+{
+"processes": [
+{
+"contract": {
+"constraints": [
+                            
+],
+"inputs": [
+                            
+]
+},
+"parameters": [
+                        
+],
+"flowElements": [
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+                                
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "auto start",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "StartTimerEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Gateway1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": "",
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "auto start",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+                                
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "Start1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "StartEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Gateway1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": "",
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start1",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Gateway1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": "",
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start1",
+"name": ""
+},
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Gateway1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": "",
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "auto start",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "Gateway1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "XORGateway",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "cleanData",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Gateway1",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "cleanData",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Gateway1",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "cleanData",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "ServiceTask",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "newData",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "cleanData",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "newData",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "cleanData",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "newData",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "ServiceTask",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "newData",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "newData",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_BdmSampleData-1.0",
+"actorFilter": null,
+"name": "End1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "EndEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+                                
+],
+"description": ""
+}
+],
+"connectorsOut": [
+                        
+],
+"actors": [
+{
+"initiator": true,
+"description": "This is an example of actor that is mapped to any ACME users",
+"name": "Employee actor"
+}
+],
+"eventSubprocesses": [
+                        
+],
+"documents": [
+                        
+],
+"version": "1.0",
+"lanes": [
+{
+"process": "_BdmSampleData-1.0",
+"description": "",
+"actorFilter": null,
+"name": "Employee lane",
+"actor": "Employee actor"
+}
+],
+"globalVariables": [
+{
+"defaultValue": {
+"type": "TYPE_QUERY_BUSINESS_DATA",
+"content": "SELECT s\nFROM Sample s\nORDER BY s.persistenceId",
+"returnType": "List",
+"name": "Sample.find"
+},
+"type": "List<Sample>",
+"description": "",
+"name": "sample"
+}
+],
+"formMapping": {
+"form": null,
+"type": "NONE",
+"url": null
+},
+"description": "",
+"name": "_BdmSampleData",
+"connectorsIn": [
+                        
+],
+"displayName": null
+}
+],
+"version": "1.0",
+"description": "",
+"name": "_BdmSampleData"
+},
+{
+"processes": [
+{
+"contract": {
+"constraints": [
+{
+"expression": "multiSampleInput?.sampleLong.flatten().findAll().every{ it.isLong() }",
+"inputs": [
+"multiSampleInput"
+],
+"description": "",
+"errorMessage": "A Long value is expected for Sample.sampleLong",
+"name": "type_long_multiSampleInput_sampleLong"
+}
+],
+"inputs": [
+{
+"multiple": false,
+"type": "FILE",
+"description": "",
+"name": "singleDocDocumentInput",
+"children": [
+                                    
+]
+},
+{
+"multiple": true,
+"type": "FILE",
+"description": "",
+"name": "multiDocDocumentInput",
+"children": [
+                                    
+]
+},
+{
+"multiple": false,
+"type": "COMPLEX",
+"description": "",
+"name": "singleSampleInput",
+"children": [
+{
+"multiple": false,
+"type": "DATE",
+"description": "",
+"name": "attribute1",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATE",
+"description": "",
+"name": "sampleDateOnly",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "OFFSETDATETIME",
+"description": "",
+"name": "sampleDateTime",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATETIME",
+"description": "",
+"name": "sampleDateTimeNoTimeZone",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleLong",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "INTEGER",
+"description": "",
+"name": "sampleInteger",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleDouble",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleFloat",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleString",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleText",
+"children": [
+                                            
+]
+}
+]
+},
+{
+"multiple": true,
+"type": "COMPLEX",
+"description": "",
+"name": "multiSampleInput",
+"children": [
+{
+"multiple": false,
+"type": "DATE",
+"description": "",
+"name": "attribute1",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATE",
+"description": "",
+"name": "sampleDateOnly",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "OFFSETDATETIME",
+"description": "",
+"name": "sampleDateTime",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATETIME",
+"description": "",
+"name": "sampleDateTimeNoTimeZone",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleLong",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "INTEGER",
+"description": "",
+"name": "sampleInteger",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleDouble",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleFloat",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleString",
+"children": [
+                                            
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleText",
+"children": [
+                                            
+]
+}
+]
+}
+]
+},
+"parameters": [
+                        
+],
+"flowElements": [
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+                                
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_docGenDemo-1.0",
+"actorFilter": null,
+"name": "Start1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "StartEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "review",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start1",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": {
+"constraints": [
+{
+"expression": "multiSampleInput1?.sampleLong.flatten().findAll().every{ it.isLong() }",
+"inputs": [
+"multiSampleInput1"
+],
+"description": "",
+"errorMessage": "A Long value is expected for Sample.sampleLong",
+"name": "type_long_multiSampleInput1_sampleLong"
+}
+],
+"inputs": [
+{
+"multiple": false,
+"type": "COMPLEX",
+"description": "",
+"name": "singleSampleInput",
+"children": [
+{
+"multiple": false,
+"type": "DATE",
+"description": "",
+"name": "attribute1",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATE",
+"description": "",
+"name": "sampleDateOnly",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "OFFSETDATETIME",
+"description": "",
+"name": "sampleDateTime",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATETIME",
+"description": "",
+"name": "sampleDateTimeNoTimeZone",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleLong",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "INTEGER",
+"description": "",
+"name": "sampleInteger",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleDouble",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleFloat",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleString",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleText",
+"children": [
+                                                    
+]
+}
+]
+},
+{
+"multiple": true,
+"type": "COMPLEX",
+"description": "",
+"name": "multiSampleInput",
+"children": [
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "persistenceId_string",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DATE",
+"description": "",
+"name": "attribute1",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATE",
+"description": "",
+"name": "sampleDateOnly",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "OFFSETDATETIME",
+"description": "",
+"name": "sampleDateTime",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATETIME",
+"description": "",
+"name": "sampleDateTimeNoTimeZone",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleLong",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "INTEGER",
+"description": "",
+"name": "sampleInteger",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleDouble",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleFloat",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleString",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleText",
+"children": [
+                                                    
+]
+}
+]
+},
+{
+"multiple": false,
+"type": "FILE",
+"description": "",
+"name": "singleDocDocumentInput",
+"children": [
+                                            
+]
+},
+{
+"multiple": true,
+"type": "COMPLEX",
+"description": "",
+"name": "multiSampleInput1",
+"children": [
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "persistenceId_string",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DATE",
+"description": "",
+"name": "attribute1",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATE",
+"description": "",
+"name": "sampleDateOnly",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "OFFSETDATETIME",
+"description": "",
+"name": "sampleDateTime",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "LOCALDATETIME",
+"description": "",
+"name": "sampleDateTimeNoTimeZone",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleLong",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "INTEGER",
+"description": "",
+"name": "sampleInteger",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleDouble",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "DECIMAL",
+"description": "",
+"name": "sampleFloat",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleString",
+"children": [
+                                                    
+]
+},
+{
+"multiple": false,
+"type": "TEXT",
+"description": "",
+"name": "sampleText",
+"children": [
+                                                    
+]
+}
+]
+}
+]
+},
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "review",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start1",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": {
+"form": null,
+"type": "INTERNAL",
+"url": null
+},
+"process": "_docGenDemo-1.0",
+"actorFilter": null,
+"name": "review",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "Task",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "noContractTask",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "review",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": {
+"constraints": [
+                                    
+],
+"inputs": [
+                                    
+]
+},
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "noContractTask",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "review",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": {
+"form": null,
+"type": "INTERNAL",
+"url": null
+},
+"process": "_docGenDemo-1.0",
+"actorFilter": null,
+"name": "noContractTask",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "Task",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "auto",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "noContractTask",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "auto",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "noContractTask",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_docGenDemo-1.0",
+"actorFilter": null,
+"name": "auto",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "ServiceTask",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "auto",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "auto",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": "Employee lane",
+"formMapping": null,
+"process": "_docGenDemo-1.0",
+"actorFilter": null,
+"name": "End1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "EndTerminatedEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+                                
+],
+"description": ""
+}
+],
+"connectorsOut": [
+                        
+],
+"actors": [
+{
+"initiator": true,
+"description": "This is an example of actor that is mapped to any ACME users",
+"name": "Employee actor"
+}
+],
+"eventSubprocesses": [
+                        
+],
+"documents": [
+{
+"multiple": false,
+"initialValue": "singleDocDocumentInput",
+"mimeType": "",
+"description": "",
+"name": "singleDoc"
+},
+{
+"multiple": true,
+"initialValue": "multiDocDocumentInput",
+"mimeType": "",
+"description": "",
+"name": "multiDoc"
+}
+],
+"version": "1.0",
+"lanes": [
+{
+"process": "_docGenDemo-1.0",
+"description": "",
+"actorFilter": null,
+"name": "Employee lane",
+"actor": "Employee actor"
+}
+],
+"globalVariables": [
+{
+"defaultValue": {
+"type": "TYPE_READ_ONLY_SCRIPT",
+"content": "def sampleVar = new com.company.model.Sample()\nsampleVar.attribute1 = singleSampleInput?.attribute1\nsampleVar.sampleDateOnly = singleSampleInput?.sampleDateOnly\nsampleVar.sampleDateTime = singleSampleInput?.sampleDateTime\nsampleVar.sampleDateTimeNoTimeZone = singleSampleInput?.sampleDateTimeNoTimeZone\nsampleVar.sampleLong = singleSampleInput?.sampleLong?.trim() ? singleSampleInput.sampleLong.toLong() : null\nsampleVar.sampleInteger = singleSampleInput?.sampleInteger\nsampleVar.sampleDouble = singleSampleInput?.sampleDouble\nsampleVar.sampleFloat = singleSampleInput?.sampleFloat?.toFloat()\nsampleVar.sampleString = singleSampleInput?.sampleString\nsampleVar.sampleText = singleSampleInput?.sampleText\nreturn sampleVar",
+"returnType": "Sample",
+"name": "initSingleSample()"
+},
+"type": "Sample",
+"description": "",
+"name": "singleSample"
+},
+{
+"defaultValue": {
+"type": "TYPE_READ_ONLY_SCRIPT",
+"content": "def sampleList = []\n//For each item collected in multiple input\nmultiSampleInput.each{\n\t//Add a new composed Sample instance\n\tsampleList.add({ currentSampleInput ->\n\t\tdef sampleVar = new com.company.model.Sample()\n\t\tsampleVar.attribute1 = currentSampleInput.attribute1\n\t\tsampleVar.sampleDateOnly = currentSampleInput.sampleDateOnly\n\t\tsampleVar.sampleDateTime = currentSampleInput.sampleDateTime\n\t\tsampleVar.sampleDateTimeNoTimeZone = currentSampleInput.sampleDateTimeNoTimeZone\n\t\tsampleVar.sampleLong = currentSampleInput.sampleLong?.trim() ? currentSampleInput.sampleLong.toLong() : null\n\t\tsampleVar.sampleInteger = currentSampleInput.sampleInteger\n\t\tsampleVar.sampleDouble = currentSampleInput.sampleDouble\n\t\tsampleVar.sampleFloat = currentSampleInput.sampleFloat?.toFloat()\n\t\tsampleVar.sampleString = currentSampleInput.sampleString\n\t\tsampleVar.sampleText = currentSampleInput.sampleText\n\t\treturn sampleVar\n\t}(it))\n}\nreturn sampleList",
+"returnType": "List",
+"name": "initMultiSample()"
+},
+"type": "List<Sample>",
+"description": "",
+"name": "multiSample"
+}
+],
+"formMapping": {
+"form": {
+"widgets": [
+{
+"type": "Upload",
+"label": "Single Doc",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Upload",
+"label": "Multi Doc",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Button",
+"label": "<span class=\"glyphicon glyphicon-remove\"></span>",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Default label",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Button",
+"label": "<span class=\"glyphicon glyphicon-plus\"></span> Add File",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Attribute1",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Sample Date Only",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time No Time Zone",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Long",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Integer",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Double",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Float",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample String",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Text",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Attribute1",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Sample Date Only",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time No Time Zone",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Long",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Integer",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Double",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Float",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample String",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Text",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Button",
+"label": "<span class=\"glyphicon glyphicon-remove\"></span>",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Button",
+"label": "<span class=\"glyphicon glyphicon-plus\"></span> Add Sample",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Button",
+"label": "Submit",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Text",
+"label": "",
+"hiddenExpression": "!formOutput._submitError.message",
+"description": ""
+}
+],
+"type": "form",
+"description": "Page generated with Bonita UI designer",
+"name": "docGenInstanciation",
+"displayName": null
+},
+"type": "INTERNAL",
+"url": null
+},
+"description": "",
+"name": "_docGenDemo",
+"connectorsIn": [
+                        
+],
+"displayName": null
+},
+{
+"contract": {
+"constraints": [
+                            
+],
+"inputs": [
+                            
+]
+},
+"parameters": [
+                        
+],
+"flowElements": [
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+                                
+],
+"localVariables": [
+                                
+],
+"lane": null,
+"formMapping": null,
+"process": "_noContractPool-1.0",
+"actorFilter": null,
+"name": "Start2",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "StartEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Step1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start2",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "Step1",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Start2",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": null,
+"formMapping": null,
+"process": "_noContractPool-1.0",
+"actorFilter": null,
+"name": "Step1",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "ServiceTask",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End2",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Step1",
+"name": ""
+}
+],
+"description": ""
+},
+{
+"contract": null,
+"calledProcessVersion": null,
+"iterationType": null,
+"boundaryEvents": [
+                                
+],
+"incomings": [
+{
+"decisionTable": {
+"lines": [
+                                            
+],
+"defaultTakeTransition": false
+},
+"useDecisionTable": false,
+"target": "End2",
+"condition": {
+"type": "TYPE_CONDITION",
+"content": null,
+"returnType": "Boolean",
+"name": ""
+},
+"defaultFlow": false,
+"description": "",
+"source": "Step1",
+"name": ""
+}
+],
+"localVariables": [
+                                
+],
+"lane": null,
+"formMapping": null,
+"process": "_noContractPool-1.0",
+"actorFilter": null,
+"name": "End2",
+"calledProcessName": null,
+"connectorsIn": [
+                                
+],
+"bpmnType": "EndEvent",
+"connectorsOut": [
+                                
+],
+"outgoings": [
+                                
+],
+"description": ""
+}
+],
+"connectorsOut": [
+                        
+],
+"actors": [
+                        
+],
+"eventSubprocesses": [
+                        
+],
+"documents": [
+                        
+],
+"version": "1.0",
+"lanes": [
+                        
+],
+"globalVariables": [
+                        
+],
+"formMapping": {
+"form": null,
+"type": "INTERNAL",
+"url": null
+},
+"description": "",
+"name": "_noContractPool",
+"connectorsIn": [
+                        
+],
+"displayName": null
+}
+],
+"version": "1.0",
+"description": "",
+"name": "_DataGenerationDemoProcess"
+}
+],
+"name": "presales-BPM-Template",
+"imageFolderPath": "documentation/images",
+"applicationPages": [
+{
+"widgets": [
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Table",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Text",
+"label": "formInput",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Text",
+"label": "Sample selected",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Sample Date Old",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DatePicker",
+"label": "Sample Date Only",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "DateTimePicker",
+"label": "Sample Date Time No Time Zone",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Integer",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Long",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Double",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Float",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample String",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Sample Text",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Title",
+"label": "",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Page (start at 0)",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Input",
+"label": "Count",
+"hiddenExpression": "false",
+"description": ""
+},
+{
+"type": "Text",
+"label": "Response",
+"hiddenExpression": "false",
+"description": ""
+}
+],
+"type": "page",
+"description": "sample page to call BDR rest api extension",
+"name": "bdmQueriesTest",
+"displayName": "Demo BDM queries"
+}
+],
+"author": null,
+"bonitaVersion": "7.12",
+"organization": {
+"profiles": [
+{
+"description": "The user can view and perform tasks and can start a new case of a\nprocess.",
+"name": "User"
+},
+{
+"description": "The administrator can install a process, manage the organization, and\nhandle some errors (for example, by replaying a task).",
+"name": "Administrator"
+},
+{
+"description": "The Process manager can supervise designated processes, and manage\ncases and tasks of those processes.",
+"name": "Process manager"
+}
+],
+"roles": [
+{
+"description": "",
+"name": "member",
+"displayName": "Member"
+}
+],
+"groups": [
+{
+"subGroups": [
+{
+"subGroups": [
+                            
+],
+"description": "This group represents the human resources department of the ACME organization",
+"path": "/acme/hr",
+"name": "hr",
+"displayName": "Human Resources"
+},
+{
+"subGroups": [
+                            
+],
+"description": "This group represents the finance department of the ACME organization",
+"path": "/acme/finance",
+"name": "finance",
+"displayName": "Finance"
+},
+{
+"subGroups": [
+                            
+],
+"description": "This group represents the infrastructure department of the ACME organization",
+"path": "/acme/it",
+"name": "it",
+"displayName": "Infrastructure"
+},
+{
+"subGroups": [
+                            
+],
+"description": "This group represents the marketing department of the ACME organization",
+"path": "/acme/marketing",
+"name": "marketing",
+"displayName": "Marketing"
+},
+{
+"subGroups": [
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the research & development department of the ACME organization",
+"path": "/acme/production/rd",
+"name": "rd",
+"displayName": "Research & Development"
+},
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the services department of the ACME organization",
+"path": "/acme/production/services",
+"name": "services",
+"displayName": "Services"
+}
+],
+"description": "This group represents the production department of the ACME organization",
+"path": "/acme/production",
+"name": "production",
+"displayName": "Production"
+},
+{
+"subGroups": [
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the europe department of the ACME organization",
+"path": "/acme/sales/europe",
+"name": "europe",
+"displayName": "Europe"
+},
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the asia department of the ACME organization",
+"path": "/acme/sales/asia",
+"name": "asia",
+"displayName": "Asia"
+},
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the latin america department of the ACME organization",
+"path": "/acme/sales/latin_america",
+"name": "latin_america",
+"displayName": "Latin America"
+},
+{
+"subGroups": [
+                                    
+],
+"description": "This group represents the north america department of the ACME organization",
+"path": "/acme/sales/north_america",
+"name": "north_america",
+"displayName": "North America"
+}
+],
+"description": "This group represents the sales department of the ACME organization",
+"path": "/acme/sales",
+"name": "sales",
+"displayName": "Sales"
+}
+],
+"description": "This group represents the acme department of the ACME organization",
+"path": "/acme",
+"name": "acme",
+"displayName": "Acme"
+}
+]
+}
+}
+----
+== Data generation groovy utils
+
+.ArrayUtil.groovy
+[source,Groovy]
+----
+include::src-groovy/com/bonitasoft/data/initialization/utils/ArrayUtil.groovy[]
+
+----
+
+.LoggerUtil.groovy
+[source,Groovy]
+----
+include::src-groovy/com/bonitasoft/data/initialization/utils/LoggerUtil.groovy[]
+
+----
+
+.ProcessUtil.groovy
+[source,Groovy]
+----
+include::src-groovy/com/bonitasoft/data/initialization/utils/ProcessUtil.groovy[]
+
+----
+
+.UserUtil.groovy
+[source,Groovy]
+----
+include::src-groovy/com/bonitasoft/data/initialization/utils/UserUtil.groovy[]
+
+----
+
+
+== Data generation
+
+
+=== image:icons/Pool.png[title="Process"] [[_9dca73c6-0bb6-3ed3-a6b7-8635ce7e2bea]]_BdmSampleData (1.0)
+
+_No description available_
+
+
+
+._BdmSampleDataProcess.groovy
+[source,groovy]
+----
+
+package com.bonitasoft.data.initialization.process
+
+import org.bonitasoft.engine.api.APIAccessor
+
+import com.bonitasoft.data.initialization.utils.ArrayUtil
+import com.bonitasoft.data.initialization.utils.LoggerUtil
+import com.bonitasoft.data.initialization.utils.ProcessUtil
+import com.bonitasoft.data.initialization.utils.UserUtil
+import com.devskiller.jfairy.Fairy
+
+class _BdmSampleDataProcess implements LoggerUtil,ProcessUtil,UserUtil,ArrayUtil  {
+
+private static final String PROCESS_NAME = '_BdmSampleData'
+private static final String PROCESS_VERSION = '1.0'
+
+
+APIAccessor apiAccessor
+Fairy fairy
+
+def _BdmSampleDataProcess(APIAccessor apiAccessor,Fairy fairy) {
+this.apiAccessor=apiAccessor
+this.fairy=fairy
+}
+
+long startCase(long userId, def contract) {
+startProcessInstance(apiAccessor, userId, PROCESS_NAME, contract)
+}
+
+def contractCase(){
+
+emptyContract() //no contract for process
+}
+    
+}
+
+def emptyContract(){
+[:]
+}
+
+}
+
+----
+=== image:icons/Pool.png[title="Process"] [[_c75ddba9-ff95-38df-b83a-6208081faac3]]_docGenDemo (1.0)
+
+_No description available_
+
+
+
+._docGenDemoProcess.groovy
+[source,groovy]
+----
+
+package com.bonitasoft.data.initialization.process
+
+import org.bonitasoft.engine.api.APIAccessor
+
+import com.bonitasoft.data.initialization.utils.ArrayUtil
+import com.bonitasoft.data.initialization.utils.LoggerUtil
+import com.bonitasoft.data.initialization.utils.ProcessUtil
+import com.bonitasoft.data.initialization.utils.UserUtil
+import com.devskiller.jfairy.Fairy
+
+class _docGenDemoProcess implements LoggerUtil,ProcessUtil,UserUtil,ArrayUtil  {
+
+private static final String PROCESS_NAME = '_docGenDemo'
+private static final String PROCESS_VERSION = '1.0'
+
+private static final String TASK_REVIEW = 'review' // Task 
+private static final String TASK_NOCONTRACTTASK = 'noContractTask' // Task 
+
+APIAccessor apiAccessor
+Fairy fairy
+
+def _docGenDemoProcess(APIAccessor apiAccessor,Fairy fairy) {
+this.apiAccessor=apiAccessor
+this.fairy=fairy
+}
+
+long startCase(long userId, def contract) {
+startProcessInstance(apiAccessor, userId, PROCESS_NAME, contract)
+}
+
+def contractCase(){
+def contractInputs_singleDocDocumentInput_fileValue =  newFileInputValue("file.txt","Text/plain", "file content".bytes))
+def contractInputs_singleDocDocumentInput = contractInputs_singleDocDocumentInput_fileValue /* FILE single */
+def contractInputs_multiDocDocumentInput_fileValue =  newFileInputValue("file.txt","Text/plain", "file content".bytes))
+def contractInputs_multiDocDocumentInput = [contractInputs_multiDocDocumentInput_fileValue] /* FILE multiple */
+def contractInputs_singleSampleInput = [:] 
+
+def contractInputs_singleSampleInput_attribute1 = new Date() /* DATE single */
+def contractInputs_singleSampleInput_sampleDateOnly = LocalDate.now() /* LOCALDATE single */
+def contractInputs_singleSampleInput_sampleDateTime = OffsetDateTime.now() /* OFFSETDATETIME single */
+def contractInputs_singleSampleInput_sampleDateTimeNoTimeZone = type LOCALDATETIME is not supported! /* LOCALDATETIME single */
+def contractInputs_singleSampleInput_sampleLong = "ABCD" /* TEXT single */
+def contractInputs_singleSampleInput_sampleInteger = 123 /* INTEGER single */
+def contractInputs_singleSampleInput_sampleDouble = 456.78D /* DECIMAL single */
+def contractInputs_singleSampleInput_sampleFloat = 456.78D /* DECIMAL single */
+def contractInputs_singleSampleInput_sampleString = "ABCD" /* TEXT single */
+def contractInputs_singleSampleInput_sampleText = "ABCD" /* TEXT single */
+
+contractInputs_singleSampleInput.attribute1 = contractInputs_singleSampleInput_attribute1
+contractInputs_singleSampleInput.sampleDateOnly = contractInputs_singleSampleInput_sampleDateOnly
+contractInputs_singleSampleInput.sampleDateTime = contractInputs_singleSampleInput_sampleDateTime
+contractInputs_singleSampleInput.sampleDateTimeNoTimeZone = contractInputs_singleSampleInput_sampleDateTimeNoTimeZone
+contractInputs_singleSampleInput.sampleLong = contractInputs_singleSampleInput_sampleLong
+contractInputs_singleSampleInput.sampleInteger = contractInputs_singleSampleInput_sampleInteger
+contractInputs_singleSampleInput.sampleDouble = contractInputs_singleSampleInput_sampleDouble
+contractInputs_singleSampleInput.sampleFloat = contractInputs_singleSampleInput_sampleFloat
+contractInputs_singleSampleInput.sampleString = contractInputs_singleSampleInput_sampleString
+contractInputs_singleSampleInput.sampleText = contractInputs_singleSampleInput_sampleText
+def contractInputs_multiSampleInput = [:] 
+
+def contractInputs_multiSampleInput_attribute1 = new Date() /* DATE single */
+def contractInputs_multiSampleInput_sampleDateOnly = LocalDate.now() /* LOCALDATE single */
+def contractInputs_multiSampleInput_sampleDateTime = OffsetDateTime.now() /* OFFSETDATETIME single */
+def contractInputs_multiSampleInput_sampleDateTimeNoTimeZone = type LOCALDATETIME is not supported! /* LOCALDATETIME single */
+def contractInputs_multiSampleInput_sampleLong = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput_sampleInteger = 123 /* INTEGER single */
+def contractInputs_multiSampleInput_sampleDouble = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput_sampleFloat = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput_sampleString = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput_sampleText = "ABCD" /* TEXT single */
+
+contractInputs_multiSampleInput.attribute1 = contractInputs_multiSampleInput_attribute1
+contractInputs_multiSampleInput.sampleDateOnly = contractInputs_multiSampleInput_sampleDateOnly
+contractInputs_multiSampleInput.sampleDateTime = contractInputs_multiSampleInput_sampleDateTime
+contractInputs_multiSampleInput.sampleDateTimeNoTimeZone = contractInputs_multiSampleInput_sampleDateTimeNoTimeZone
+contractInputs_multiSampleInput.sampleLong = contractInputs_multiSampleInput_sampleLong
+contractInputs_multiSampleInput.sampleInteger = contractInputs_multiSampleInput_sampleInteger
+contractInputs_multiSampleInput.sampleDouble = contractInputs_multiSampleInput_sampleDouble
+contractInputs_multiSampleInput.sampleFloat = contractInputs_multiSampleInput_sampleFloat
+contractInputs_multiSampleInput.sampleString = contractInputs_multiSampleInput_sampleString
+contractInputs_multiSampleInput.sampleText = contractInputs_multiSampleInput_sampleText
+
+def contractInputs= [:]
+contractInputs.singleDocDocumentInput = contractInputs_singleDocDocumentInput
+contractInputs.multiDocDocumentInput = contractInputs_multiDocDocumentInput
+contractInputs.singleSampleInput = contractInputs_singleSampleInput
+contractInputs.multiSampleInput = contractInputs_multiSampleInput
+return contractInputs
+    
+}
+
+    
+def taskreview(long userId, long processInstanceId ,def contract) {
+assignAndExecuteTask(apiAccessor, userId, processInstanceId, contract, TASK_REVIEW)
+}
+    
+def contractreview (){
+def contractInputs_singleSampleInput = [:] 
+
+def contractInputs_singleSampleInput_attribute1 = new Date() /* DATE single */
+def contractInputs_singleSampleInput_sampleDateOnly = LocalDate.now() /* LOCALDATE single */
+def contractInputs_singleSampleInput_sampleDateTime = OffsetDateTime.now() /* OFFSETDATETIME single */
+def contractInputs_singleSampleInput_sampleDateTimeNoTimeZone = type LOCALDATETIME is not supported! /* LOCALDATETIME single */
+def contractInputs_singleSampleInput_sampleLong = "ABCD" /* TEXT single */
+def contractInputs_singleSampleInput_sampleInteger = 123 /* INTEGER single */
+def contractInputs_singleSampleInput_sampleDouble = 456.78D /* DECIMAL single */
+def contractInputs_singleSampleInput_sampleFloat = 456.78D /* DECIMAL single */
+def contractInputs_singleSampleInput_sampleString = "ABCD" /* TEXT single */
+def contractInputs_singleSampleInput_sampleText = "ABCD" /* TEXT single */
+
+contractInputs_singleSampleInput.attribute1 = contractInputs_singleSampleInput_attribute1
+contractInputs_singleSampleInput.sampleDateOnly = contractInputs_singleSampleInput_sampleDateOnly
+contractInputs_singleSampleInput.sampleDateTime = contractInputs_singleSampleInput_sampleDateTime
+contractInputs_singleSampleInput.sampleDateTimeNoTimeZone = contractInputs_singleSampleInput_sampleDateTimeNoTimeZone
+contractInputs_singleSampleInput.sampleLong = contractInputs_singleSampleInput_sampleLong
+contractInputs_singleSampleInput.sampleInteger = contractInputs_singleSampleInput_sampleInteger
+contractInputs_singleSampleInput.sampleDouble = contractInputs_singleSampleInput_sampleDouble
+contractInputs_singleSampleInput.sampleFloat = contractInputs_singleSampleInput_sampleFloat
+contractInputs_singleSampleInput.sampleString = contractInputs_singleSampleInput_sampleString
+contractInputs_singleSampleInput.sampleText = contractInputs_singleSampleInput_sampleText
+def contractInputs_multiSampleInput = [:] 
+
+def contractInputs_multiSampleInput_persistenceId_string = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput_attribute1 = new Date() /* DATE single */
+def contractInputs_multiSampleInput_sampleDateOnly = LocalDate.now() /* LOCALDATE single */
+def contractInputs_multiSampleInput_sampleDateTime = OffsetDateTime.now() /* OFFSETDATETIME single */
+def contractInputs_multiSampleInput_sampleDateTimeNoTimeZone = type LOCALDATETIME is not supported! /* LOCALDATETIME single */
+def contractInputs_multiSampleInput_sampleLong = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput_sampleInteger = 123 /* INTEGER single */
+def contractInputs_multiSampleInput_sampleDouble = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput_sampleFloat = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput_sampleString = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput_sampleText = "ABCD" /* TEXT single */
+
+contractInputs_multiSampleInput.persistenceId_string = contractInputs_multiSampleInput_persistenceId_string
+contractInputs_multiSampleInput.attribute1 = contractInputs_multiSampleInput_attribute1
+contractInputs_multiSampleInput.sampleDateOnly = contractInputs_multiSampleInput_sampleDateOnly
+contractInputs_multiSampleInput.sampleDateTime = contractInputs_multiSampleInput_sampleDateTime
+contractInputs_multiSampleInput.sampleDateTimeNoTimeZone = contractInputs_multiSampleInput_sampleDateTimeNoTimeZone
+contractInputs_multiSampleInput.sampleLong = contractInputs_multiSampleInput_sampleLong
+contractInputs_multiSampleInput.sampleInteger = contractInputs_multiSampleInput_sampleInteger
+contractInputs_multiSampleInput.sampleDouble = contractInputs_multiSampleInput_sampleDouble
+contractInputs_multiSampleInput.sampleFloat = contractInputs_multiSampleInput_sampleFloat
+contractInputs_multiSampleInput.sampleString = contractInputs_multiSampleInput_sampleString
+contractInputs_multiSampleInput.sampleText = contractInputs_multiSampleInput_sampleText
+def contractInputs_singleDocDocumentInput_fileValue =  newFileInputValue("file.txt","Text/plain", "file content".bytes))
+def contractInputs_singleDocDocumentInput = contractInputs_singleDocDocumentInput_fileValue /* FILE single */
+def contractInputs_multiSampleInput1 = [:] 
+
+def contractInputs_multiSampleInput1_persistenceId_string = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput1_attribute1 = new Date() /* DATE single */
+def contractInputs_multiSampleInput1_sampleDateOnly = LocalDate.now() /* LOCALDATE single */
+def contractInputs_multiSampleInput1_sampleDateTime = OffsetDateTime.now() /* OFFSETDATETIME single */
+def contractInputs_multiSampleInput1_sampleDateTimeNoTimeZone = type LOCALDATETIME is not supported! /* LOCALDATETIME single */
+def contractInputs_multiSampleInput1_sampleLong = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput1_sampleInteger = 123 /* INTEGER single */
+def contractInputs_multiSampleInput1_sampleDouble = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput1_sampleFloat = 456.78D /* DECIMAL single */
+def contractInputs_multiSampleInput1_sampleString = "ABCD" /* TEXT single */
+def contractInputs_multiSampleInput1_sampleText = "ABCD" /* TEXT single */
+
+contractInputs_multiSampleInput1.persistenceId_string = contractInputs_multiSampleInput1_persistenceId_string
+contractInputs_multiSampleInput1.attribute1 = contractInputs_multiSampleInput1_attribute1
+contractInputs_multiSampleInput1.sampleDateOnly = contractInputs_multiSampleInput1_sampleDateOnly
+contractInputs_multiSampleInput1.sampleDateTime = contractInputs_multiSampleInput1_sampleDateTime
+contractInputs_multiSampleInput1.sampleDateTimeNoTimeZone = contractInputs_multiSampleInput1_sampleDateTimeNoTimeZone
+contractInputs_multiSampleInput1.sampleLong = contractInputs_multiSampleInput1_sampleLong
+contractInputs_multiSampleInput1.sampleInteger = contractInputs_multiSampleInput1_sampleInteger
+contractInputs_multiSampleInput1.sampleDouble = contractInputs_multiSampleInput1_sampleDouble
+contractInputs_multiSampleInput1.sampleFloat = contractInputs_multiSampleInput1_sampleFloat
+contractInputs_multiSampleInput1.sampleString = contractInputs_multiSampleInput1_sampleString
+contractInputs_multiSampleInput1.sampleText = contractInputs_multiSampleInput1_sampleText
+
+def contractInputs= [:]
+contractInputs.singleSampleInput = contractInputs_singleSampleInput
+contractInputs.multiSampleInput = contractInputs_multiSampleInput
+contractInputs.singleDocDocumentInput = contractInputs_singleDocDocumentInput
+contractInputs.multiSampleInput1 = contractInputs_multiSampleInput1
+return contractInputs
+}
+    
+def tasknoContractTask(long userId, long processInstanceId ,def contract) {
+assignAndExecuteTask(apiAccessor, userId, processInstanceId, contract, TASK_NOCONTRACTTASK)
+}
+    
+def contractnoContractTask (){
+
+emptyContract() //no contract for this task
+}
+        
+def emptyContract(){
+[:]
+}
+
+}
+
+----
+=== image:icons/Pool.png[title="Process"] [[_3b129c5f-0e17-38eb-97e9-1bbdf57319ec]]_noContractPool (1.0)
+
+_No description available_
+
+
+
+._noContractPoolProcess.groovy
+[source,groovy]
+----
+
+package com.bonitasoft.data.initialization.process
+
+import org.bonitasoft.engine.api.APIAccessor
+
+import com.bonitasoft.data.initialization.utils.ArrayUtil
+import com.bonitasoft.data.initialization.utils.LoggerUtil
+import com.bonitasoft.data.initialization.utils.ProcessUtil
+import com.bonitasoft.data.initialization.utils.UserUtil
+import com.devskiller.jfairy.Fairy
+
+class _noContractPoolProcess implements LoggerUtil,ProcessUtil,UserUtil,ArrayUtil  {
+
+private static final String PROCESS_NAME = '_noContractPool'
+private static final String PROCESS_VERSION = '1.0'
+
+
+APIAccessor apiAccessor
+Fairy fairy
+
+def _noContractPoolProcess(APIAccessor apiAccessor,Fairy fairy) {
+this.apiAccessor=apiAccessor
+this.fairy=fairy
+}
+
+long startCase(long userId, def contract) {
+startProcessInstance(apiAccessor, userId, PROCESS_NAME, contract)
+}
+
+def contractCase(){
+
+emptyContract() //no contract for process
+}
+    
+}
+
+def emptyContract(){
+[:]
+}
+
+}
+
+----
+
+== Business Data Model
+
+image::bdm.svg[link=images/bdm.svg]
+
+=== Package com.company.model
+
+==== Sample
+
+Sample BDM with all available types
+
+===== icon:list[] Attributes
+
+[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
+|===
+|Name                                                       |Type          |Description
+|[[Sample.persistenceId]]persistenceId*                     |Long          |           
+|[[Sample.sampleDateOld]]sampleDateOld                      |Date          |           
+|[[Sample.sampleDateOnly]]sampleDateOnly                    |LocalDate     |           
+|[[Sample.sampleDateTime]]sampleDateTime                    |OffsetDateTime|           
+|[[Sample.sampleDateTimeNoTimeZone]]sampleDateTimeNoTimeZone|LocalDateTime |           
+|[[Sample.sampleLong]]sampleLong                            |Long          |           
+|[[Sample.sampleInteger]]sampleInteger                      |Integer       |           
+|[[Sample.sampleDouble]]sampleDouble                        |Double        |           
+|[[Sample.sampleFloat]]sampleFloat                          |Float         |           
+|[[Sample.sampleString]]sampleString                        |String        |           
+|[[Sample.sampleText]]sampleText                            |String        |           
+|===
+
+== Processes
+
+=== image:icons/Pool.png[title="Process"] [[_9dca73c6-0bb6-3ed3-a6b7-8635ce7e2bea]]_BdmSampleData (1.0)
+
+_No description available_
+
+image::processes/_BdmSampleData-1.0.png[]
+
+==== icon:users[] Actors
+
+[grid=cols,options="header",cols="1,3a",stripes=even,frame=topbot]
+|===
+|Name                                                                                               |Description                                                 
+|[[_b0575645-a035-3cd2-b831-54c37d16e3dc]]Employee actor icon:play-circle[title="Process initiator"]|This is an example of actor that is mapped to any ACME users
+|===
+
+==== image:icons/Lane.png[title="Lane"] Employee lane (<<_b0575645-a035-3cd2-b831-54c37d16e3dc,icon:user[title="Actor"] Employee actor>>)
+
+_No description available_
+
+==== [[_34014651-b887-37fa-8928-6e09e2b7ec25]]image:icons/StartTimerEvent.png[title="StartTimerEvent"] auto start
+
+_No description available_
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_5f5800c7-5b57-31ea-8b3d-6753631b309c,Gateway1>>*
+
+==== [[_7a5d5227-1f42-3ae4-befb-2129beb4ea3d]]image:icons/StartEvent.png[title="StartEvent"] Start1
+
+_No description available_
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_5f5800c7-5b57-31ea-8b3d-6753631b309c,Gateway1>>*
+
+==== [[_5f5800c7-5b57-31ea-8b3d-6753631b309c]]image:icons/XORGateway.png[title="XORGateway"] Gateway1
+
+_No description available_
+
+*Previous flow element(s)*: <<_7a5d5227-1f42-3ae4-befb-2129beb4ea3d,Start1>>, <<_34014651-b887-37fa-8928-6e09e2b7ec25,auto start>>
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_7d86b615-8ca7-3837-be6c-a2bb9dd6e74a,cleanData>>*
+
+==== [[_7d86b615-8ca7-3837-be6c-a2bb9dd6e74a]]image:icons/ServiceTask.png[title="ServiceTask"] cleanData
+
+_No description available_
+
+*Previous flow element(s)*: <<_5f5800c7-5b57-31ea-8b3d-6753631b309c,Gateway1>>
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_b7ed113e-a10c-3d0f-9279-c564d10dad98,newData>>*
+
+==== [[_b7ed113e-a10c-3d0f-9279-c564d10dad98]]image:icons/ServiceTask.png[title="ServiceTask"] newData
+
+_No description available_
+
+*Previous flow element(s)*: <<_7d86b615-8ca7-3837-be6c-a2bb9dd6e74a,cleanData>>
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_b21027e6-8b01-38d8-9a6c-1acbc4c2ac15,End1>>*
+
+==== [[_b21027e6-8b01-38d8-9a6c-1acbc4c2ac15]]image:icons/EndEvent.png[title="EndEvent"] End1
+
+_No description available_
+
+*Previous flow element(s)*: <<_b7ed113e-a10c-3d0f-9279-c564d10dad98,newData>>
+
+=== image:icons/Pool.png[title="Process"] [[_c75ddba9-ff95-38df-b83a-6208081faac3]]_docGenDemo (1.0)
+
+_No description available_
+
+image::processes/_docGenDemo-1.0.png[]
+
+==== icon:users[] Actors
+
+[grid=cols,options="header",cols="1,3a",stripes=even,frame=topbot]
+|===
+|Name                                                                                               |Description                                                 
+|[[_e2092ba7-4d6f-34d0-aec8-a7673b1b1c49]]Employee actor icon:play-circle[title="Process initiator"]|This is an example of actor that is mapped to any ACME users
+|===
+
+==== icon:file[] Documents
+
+[grid=cols,options="header",cols="1,3a",stripes=even,frame=topbot]
+|===
+|Name                                                                            |Description
+|[[_8321f4f7-3b11-383d-bc17-8382f7ce1e8f]]singleDoc                              |           
+|[[_4e0b0da4-9cf0-3aba-a5e4-041207a30f55]]multiDoc icon:files-o[title="Multiple"]|           
+|===
+
+==== Instantiation form
+
+===== [[_8ca6f1cd-fe66-3e19-bd08-0fbd7ddb2014]]image:icons/page.png[] docGenInstanciation
+
+Page generated with Bonita UI designer
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                    |Description
+|Upload        |Single Doc                                               |           
+|Title         |                                                         |           
+|Upload        |Multi Doc                                                |           
+|Button        |<span class="glyphicon glyphicon-remove"></span>         |           
+|Input         |Default label                                            |           
+|Button        |<span class="glyphicon glyphicon-plus"></span> Add File  |           
+|Title         |                                                         |           
+|DatePicker    |Attribute1                                               |           
+|DatePicker    |Sample Date Only                                         |           
+|DateTimePicker|Sample Date Time                                         |           
+|DateTimePicker|Sample Date Time No Time Zone                            |           
+|Input         |Sample Long                                              |           
+|Input         |Sample Integer                                           |           
+|Input         |Sample Double                                            |           
+|Input         |Sample Float                                             |           
+|Input         |Sample String                                            |           
+|Input         |Sample Text                                              |           
+|Title         |                                                         |           
+|DatePicker    |Attribute1                                               |           
+|DatePicker    |Sample Date Only                                         |           
+|DateTimePicker|Sample Date Time                                         |           
+|DateTimePicker|Sample Date Time No Time Zone                            |           
+|Input         |Sample Long                                              |           
+|Input         |Sample Integer                                           |           
+|Input         |Sample Double                                            |           
+|Input         |Sample Float                                             |           
+|Input         |Sample String                                            |           
+|Input         |Sample Text                                              |           
+|Button        |<span class="glyphicon glyphicon-remove"></span>         |           
+|Button        |<span class="glyphicon glyphicon-plus"></span> Add Sample|           
+|Button        |Submit                                                   |           
+|Text          |                                                         |           
+|===
+
+==== icon:list-alt[] Contract inputs
+
+[verse]
+{
+    singleDocDocumentInput ([olive]_File_),
+    multiDocDocumentInput ([olive]_File_, _multiple_),
+    singleSampleInput ([teal]_SingleSampleInput_),
+    multiSampleInput ([teal]_MultiSampleInput_, _multiple_)
+}
+
+[verse]
+[teal]#SingleSampleInput# {
+    attribute1 ([olive]_Date_),
+    sampleDateOnly ([olive]_Localdate_),
+    sampleDateTime ([olive]_Offsetdatetime_),
+    sampleDateTimeNoTimeZone ([olive]_Localdatetime_),
+    sampleLong ([olive]_Text_),
+    sampleInteger ([olive]_Integer_),
+    sampleDouble ([olive]_Decimal_),
+    sampleFloat ([olive]_Decimal_),
+    sampleString ([olive]_Text_),
+    sampleText ([olive]_Text_)
+}
+
+[verse]
+[teal]#MultiSampleInput# {
+    attribute1 ([olive]_Date_),
+    sampleDateOnly ([olive]_Localdate_),
+    sampleDateTime ([olive]_Offsetdatetime_),
+    sampleDateTimeNoTimeZone ([olive]_Localdatetime_),
+    sampleLong ([olive]_Text_),
+    sampleInteger ([olive]_Integer_),
+    sampleDouble ([olive]_Decimal_),
+    sampleFloat ([olive]_Decimal_),
+    sampleString ([olive]_Text_),
+    sampleText ([olive]_Text_)
+}
+
+==== icon:check-circle[] Contract constraints
+
+type_long_multiSampleInput_sampleLong:: _No description available_
++
+.Expression
+[source,groovy]
+----
+multiSampleInput?.sampleLong.flatten().findAll().every{ it.isLong() }
+----
++
+.Technical error message
+----
+A Long value is expected for Sample.sampleLong
+----
+
+==== image:icons/Lane.png[title="Lane"] Employee lane (<<_e2092ba7-4d6f-34d0-aec8-a7673b1b1c49,icon:user[title="Actor"] Employee actor>>)
+
+_No description available_
+
+==== [[_69fb2609-6a7a-35d4-acfb-03ce025ac1f3]]image:icons/StartEvent.png[title="StartEvent"] Start1
+
+_No description available_
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_622f2671-cc64-3b3e-903d-c7891f33b727,review>>*
+
+==== [[_622f2671-cc64-3b3e-903d-c7891f33b727]]image:icons/Task.png[title="Task"] review
+
+_No description available_
+
+*Previous flow element(s)*: <<_69fb2609-6a7a-35d4-acfb-03ce025ac1f3,Start1>>
+
+[CAUTION]
+====
+Invalid form mapping. No form specified.
+====
+
+===== icon:list-alt[] Contract inputs
+
+[verse]
+{
+    singleSampleInput ([teal]_SingleSampleInput_),
+    multiSampleInput ([teal]_MultiSampleInput_, _multiple_),
+    singleDocDocumentInput ([olive]_File_),
+    multiSampleInput1 ([teal]_MultiSampleInput1_, _multiple_)
+}
+
+[verse]
+[teal]#SingleSampleInput# {
+    attribute1 ([olive]_Date_),
+    sampleDateOnly ([olive]_Localdate_),
+    sampleDateTime ([olive]_Offsetdatetime_),
+    sampleDateTimeNoTimeZone ([olive]_Localdatetime_),
+    sampleLong ([olive]_Text_),
+    sampleInteger ([olive]_Integer_),
+    sampleDouble ([olive]_Decimal_),
+    sampleFloat ([olive]_Decimal_),
+    sampleString ([olive]_Text_),
+    sampleText ([olive]_Text_)
+}
+
+[verse]
+[teal]#MultiSampleInput# {
+    persistenceId_string ([olive]_Text_),
+    attribute1 ([olive]_Date_),
+    sampleDateOnly ([olive]_Localdate_),
+    sampleDateTime ([olive]_Offsetdatetime_),
+    sampleDateTimeNoTimeZone ([olive]_Localdatetime_),
+    sampleLong ([olive]_Text_),
+    sampleInteger ([olive]_Integer_),
+    sampleDouble ([olive]_Decimal_),
+    sampleFloat ([olive]_Decimal_),
+    sampleString ([olive]_Text_),
+    sampleText ([olive]_Text_)
+}
+
+[verse]
+[teal]#MultiSampleInput1# {
+    persistenceId_string ([olive]_Text_),
+    attribute1 ([olive]_Date_),
+    sampleDateOnly ([olive]_Localdate_),
+    sampleDateTime ([olive]_Offsetdatetime_),
+    sampleDateTimeNoTimeZone ([olive]_Localdatetime_),
+    sampleLong ([olive]_Text_),
+    sampleInteger ([olive]_Integer_),
+    sampleDouble ([olive]_Decimal_),
+    sampleFloat ([olive]_Decimal_),
+    sampleString ([olive]_Text_),
+    sampleText ([olive]_Text_)
+}
+
+===== icon:check-circle[] Contract constraints
+
+type_long_multiSampleInput1_sampleLong:: _No description available_
++
+.Expression
+[source,groovy]
+----
+multiSampleInput1?.sampleLong.flatten().findAll().every{ it.isLong() }
+----
++
+.Technical error message
+----
+A Long value is expected for Sample.sampleLong
+----
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_5c322790-0a8e-3961-81cb-7462156b1a6a,noContractTask>>*
+
+==== [[_5c322790-0a8e-3961-81cb-7462156b1a6a]]image:icons/Task.png[title="Task"] noContractTask
+
+_No description available_
+
+*Previous flow element(s)*: <<_622f2671-cc64-3b3e-903d-c7891f33b727,review>>
+
+[CAUTION]
+====
+Invalid form mapping. No form specified.
+====
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_94af1c32-851a-38ff-9106-165a0f396188,auto>>*
+
+==== [[_94af1c32-851a-38ff-9106-165a0f396188]]image:icons/ServiceTask.png[title="ServiceTask"] auto
+
+_No description available_
+
+*Previous flow element(s)*: <<_5c322790-0a8e-3961-81cb-7462156b1a6a,noContractTask>>
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_46b2822d-43c5-3e59-90da-6f595e8623f5,End1>>*
+
+==== [[_46b2822d-43c5-3e59-90da-6f595e8623f5]]image:icons/EndTerminatedEvent.png[title="EndTerminatedEvent"] End1
+
+_No description available_
+
+*Previous flow element(s)*: <<_94af1c32-851a-38ff-9106-165a0f396188,auto>>
+
+=== image:icons/Pool.png[title="Process"] [[_3b129c5f-0e17-38eb-97e9-1bbdf57319ec]]_noContractPool (1.0)
+
+_No description available_
+
+image::processes/_noContractPool-1.0.png[]
+
+==== Instantiation form
+
+[CAUTION]
+====
+Invalid form mapping. No form specified.
+====
+
+==== [[_ca6d57bd-0c68-3ab7-afee-d01d7772c7a2]]image:icons/StartEvent.png[title="StartEvent"] Start2
+
+_No description available_
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_40ac66c1-6550-31df-b2e7-abfc18633f25,Step1>>*
+
+==== [[_40ac66c1-6550-31df-b2e7-abfc18633f25]]image:icons/ServiceTask.png[title="ServiceTask"] Step1
+
+_No description available_
+
+*Previous flow element(s)*: <<_ca6d57bd-0c68-3ab7-afee-d01d7772c7a2,Start2>>
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_3a5704b0-be44-34e9-a274-a9d2882a753f,End2>>*
+
+==== [[_3a5704b0-be44-34e9-a274-a9d2882a753f]]image:icons/EndEvent.png[title="EndEvent"] End2
+
+_No description available_
+
+*Previous flow element(s)*: <<_40ac66c1-6550-31df-b2e7-abfc18633f25,Step1>>
+
+== Diagrams
+
+=== _BdmSampleData (1.0)
+
+_No description available_
+
+image::diagrams/_BdmSampleData-1.0.png[]
+
+=== _DataGenerationDemoProcess (1.0)
+
+_No description available_
+
+image::diagrams/_DataGenerationDemoProcess-1.0.png[]
+
