@@ -17,28 +17,28 @@ jobs:
           echo "Bonita_DNS: ${{ inputs.Bonita_DNS }}"
 
   Get_Bonita_logs:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.6.0
     with:
       bonita_dns_name: ${{ inputs.Bonita_DNS }}
       bonita_service: 'bonita'
     secrets: inherit
 
   Get_Bonita_DB_logs:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.6.0
     with:
       bonita_dns_name: ${{ inputs.Bonita_DNS }}
       bonita_service: 'postgresql'
     secrets: inherit
 
   Get_UIB_logs:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.6.0
     with:
       bonita_dns_name: ${{ inputs.Bonita_DNS }}
       bonita_service: 'bonita-ui'
     secrets: inherit
 
   Get_UI_proxy_logs:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.2.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_get_bonita_logs.yml@v1.6.0
     with:
       bonita_dns_name: ${{ inputs.Bonita_DNS }}
       bonita_service: 'bonita-ui-proxy'

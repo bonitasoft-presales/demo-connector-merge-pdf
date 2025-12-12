@@ -18,11 +18,11 @@ concurrency:
 
 jobs:
   pre_requisites:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_prerequisites.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_prerequisites.yml@v1.6.0
     secrets: inherit
 
   create_server:
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_create_server.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_create_server.yml@v1.6.0
     secrets: inherit
 
   set_bonita_dns:
@@ -57,7 +57,7 @@ jobs:
     needs:
       - create_server
       - set_bonita_dns
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_build_sca.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_build_sca.yml@v1.6.0
     secrets: inherit
 
   deploy_SCA:
@@ -65,7 +65,7 @@ jobs:
       - create_server
       - set_bonita_dns
       - build_sca
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_deploy_sca.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_deploy_sca.yml@v1.6.0
     secrets: inherit
 
   deploy_UIB:
@@ -73,7 +73,7 @@ jobs:
       - create_server
       - set_bonita_dns
       - deploy_SCA
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_deploy_uib_aws.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_deploy_uib_aws.yml@v1.6.0
     with:
       bonita_dns_name: ${{ needs.set_bonita_dns.outputs.publicDnsName }}
     secrets: inherit
@@ -84,12 +84,12 @@ jobs:
       - deploy_SCA
       - deploy_UIB
       - create_server
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_run_it.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_run_it.yml@v1.6.0
     secrets: inherit
 
   run-Datagen:
     needs:
       - pre_requisites
       - run-IT
-    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_run_datagen.yml@v1.1.0
+    uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_run_datagen.yml@v1.6.0
     secrets: inherit
