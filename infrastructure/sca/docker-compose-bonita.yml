@@ -19,8 +19,8 @@ services:
       - DB_HOST=bonita-db
       - BONITA_RUNTIME_ADMIN_USERNAME=install
       - BONITA_RUNTIME_ADMIN_PASSWORD=install
-      - MONITORING_USERNAME=monitoring
-      - MONITORING_PASSWORD=mon1tor1ng_adm1n
+      - MONITORING_USERNAME=${HEALTHZ_USERNAME}
+      - MONITORING_PASSWORD=${HEALTHZ_PASSWORD}
       - PLATFORM_LOGIN=pfadmin
       - PLATFORM_PASSWORD=pfsecret
       - JMX_REMOTE_ACCESS=false
