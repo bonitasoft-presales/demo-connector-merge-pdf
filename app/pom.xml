@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.company</groupId>
-    <artifactId>presales-bpm-template-parent</artifactId>
+    <groupId>com.bonitasoft.presales</groupId>
+    <artifactId>demo-connector-merge-pdf-parent</artifactId>
     <version>1.0.0</version>
   </parent>
-  <artifactId>presales-bpm-template</artifactId>
-  <name>presales-BPM-Template</name>
+  <artifactId>demo-connector-merge-pdf</artifactId>
+  <name>demo-connector-merge-pdf</name>
   <dependencies>
     <dependency>
       <groupId>com.bonitasoft.engine</groupId>
@@ -129,11 +129,17 @@
       <type>jar</type>
       <version>1020.2.2</version>
     </dependency>
+    <dependency>
+      <groupId>com.bonitasoft.presales.connector</groupId>
+      <artifactId>connector-merge-pdf</artifactId>
+      <version>1.2</version>
+    </dependency>
     
     
 
 
   </dependencies>
+  <description>sample projet to demonstrate merge pdf connector</description>
   <build>
     <plugins>
       <plugin>

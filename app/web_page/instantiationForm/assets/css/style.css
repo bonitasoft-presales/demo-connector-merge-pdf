@@ -11,8 +11,8 @@
 
 /* Set a red border to invalid input fields in forms */
 input[type='text'].ng-invalid.ng-dirty, input[type='email'].ng-invalid.ng-dirty,
-input[type='number'].ng-invalid.ng-dirty, input[type='url'].ng-invalid.ng-dirty,
-input[type='password'].ng-invalid.ng-dirty {
+input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-dirty,
+input[type='url'].ng-invalid.ng-dirty {
   border-color: #C00;
   border-width: 1px;
 }
@@ -36,8 +36,7 @@ input[type='password'].ng-invalid.ng-dirty {
     z-index: 9999;
 }
 
-
-
+/* Error redirection dialog */
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     width: 700px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
