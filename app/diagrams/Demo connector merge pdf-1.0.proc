@@ -37,9 +37,7 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_obXE8Nc4EfCpdJwScdWC8w" name="mergedDocument" content="mergedDocument" type="DOCUMENT_REF_TYPE">
               <referencedElements xmi:type="process:Document" xmi:id="_obXE8dc4EfCpdJwScdWC8w" name="mergedDocument"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_obXE8tc4EfCpdJwScdWC8w" name="mergedDocumentDocumentInput" content="mergedDocumentDocumentInput" type="TYPE_CONTRACT_INPUT" returnType="org.bonitasoft.engine.bpm.contract.FileInputValue">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_obXE89c4EfCpdJwScdWC8w" name="mergedDocumentDocumentInput" type="FILE" createMode="false"/>
-            </rightOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_obXE8tc4EfCpdJwScdWC8w" name="" content=""/>
             <operator xmi:type="expression:Operator" xmi:id="_obXE9Nc4EfCpdJwScdWC8w" type="DOCUMENT_CREATE_UPDATE"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_QBldutc4EfCpdJwScdWC8w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -50,9 +48,7 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_QBmEwtc4EfCpdJwScdWC8w">
             <targetForm xmi:type="expression:Expression" xmi:id="_PjIxsNc5EfCpdJwScdWC8w" name="reviewMergedDocForm" content="52176cd3-08fb-4df7-8fef-cf83975bb8ec" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_QBmExNc4EfCpdJwScdWC8w">
-            <inputs xmi:type="process:ContractInput" xmi:id="_obVPwNc4EfCpdJwScdWC8w" name="mergedDocumentDocumentInput" type="FILE" dataReference="mergedDocument" createMode="false"/>
-          </contract>
+          <contract xmi:type="process:Contract" xmi:id="_QBmExNc4EfCpdJwScdWC8w"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_QBmExdc4EfCpdJwScdWC8w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:EndEvent" xmi:id="_pQFGcNc4EfCpdJwScdWC8w" name="End1" incoming="_pQc54Nc4EfCpdJwScdWC8w">
