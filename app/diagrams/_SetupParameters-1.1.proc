@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_o2vwwCYLEe6Pvqh5LFv7CA" name="_SetupParameters" version="1.1" bonitaModelVersion="8">
+  <process:MainProcess xmi:id="_o2vwwCYLEe6Pvqh5LFv7CA" name="_SetupParameters" version="1.1" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_o2vwwSYLEe6Pvqh5LFv7CA" documentation="allow to override in a global way all process parameters" name="_SetupParameters" version="1.1" displayName="Setup parameters">
       <elements xmi:type="process:Lane" xmi:id="_o2vwwiYLEe6Pvqh5LFv7CA" name="Employee lane" actor="_o2vw2yYLEe6Pvqh5LFv7CA">
         <elements xmi:type="process:StartEvent" xmi:id="_o2vwwyYLEe6Pvqh5LFv7CA" name="Start1" outgoing="_o2vw2CYLEe6Pvqh5LFv7CA">
@@ -13,7 +13,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_o2vwySYLEe6Pvqh5LFv7CA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_o2vwyiYLEe6Pvqh5LFv7CA" name="" content="" returnTypeFixed="true"/>
           <connectors xmi:type="process:Connector" xmi:id="_cxMh8CYQEe6Pvqh5LFv7CA" name="updateParameters" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_cxMh8SYQEe6Pvqh5LFv7CA" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="8">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_cxMh8SYQEe6Pvqh5LFv7CA" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="9">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_cxMh8iYQEe6Pvqh5LFv7CA" key="script">
                 <expression xmi:type="expression:Expression" xmi:id="_cxMh8yYQEe6Pvqh5LFv7CA" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
               </parameters>
@@ -130,7 +130,7 @@
         <condition xmi:type="expression:Expression" xmi:id="_wAsO8iYLEe6Pvqh5LFv7CA" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_o2vw2yYLEe6Pvqh5LFv7CA" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_Nr-XUIb1Ee-NQsImNhE52g" name="presales" version="8" username="walter.bates">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_Nr-XUIb1Ee-NQsImNhE52g" name="presales" version="9" username="walter.bates">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_NsCBs4b1Ee-NQsImNhE52g">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_NsCBtIb1Ee-NQsImNhE52g" name="Employee actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_NsCBtYb1Ee-NQsImNhE52g"/>
@@ -147,20 +147,8 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_Nr-XVIb1Ee-NQsImNhE52g" key="scripting-groovy-script-impl -- 1.1.4" value="bonita-connector-groovy-1.1.4.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Nr-XVYb1Ee-NQsImNhE52g" id="GROOVY_SCRIPT">
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsBaoIb1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/ArrayUtil.groovy" value="com/bonitasoft/data/initialization/utils/ArrayUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsBaoYb1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/LoggerUtil.groovy" value="com/bonitasoft/data/initialization/utils/LoggerUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsBaoob1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/ProcessUtil.groovy" value="com/bonitasoft/data/initialization/utils/ProcessUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsBao4b1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/UserUtil.groovy" value="com/bonitasoft/data/initialization/utils/UserUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Nr-XVob1Ee-NQsImNhE52g" id="ACTOR_FILTER"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Nr-XV4b1Ee-NQsImNhE52g" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Nr-XWIb1Ee-NQsImNhE52g" id="GROOVY_SCRIPT">
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsBapIb1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/ArrayUtil.groovy" value="com/bonitasoft/data/initialization/utils/ArrayUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsCBsIb1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/LoggerUtil.groovy" value="com/bonitasoft/data/initialization/utils/LoggerUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsCBsYb1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/ProcessUtil.groovy" value="com/bonitasoft/data/initialization/utils/ProcessUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-          <fragments xmi:type="configuration:Fragment" xmi:id="_NsCBsob1Ee-NQsImNhE52g" key="com/bonitasoft/data/initialization/utils/UserUtil.groovy" value="com/bonitasoft/data/initialization/utils/UserUtil.groovy" exported="false" type="GROOVY_SCRIPT"/>
-        </applicationDependencies>
       </configurations>
       <contract xmi:type="process:Contract" xmi:id="_o2vw3CYLEe6Pvqh5LFv7CA">
         <inputs xmi:type="process:ContractInput" xmi:id="_ZNDZ4CYdEe6Pvqh5LFv7CA" name="smtpFrom">
