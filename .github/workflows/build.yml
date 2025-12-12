@@ -75,8 +75,6 @@ jobs:
       AWS_SSH_USER: ${{ secrets.AWS_SSH_USER }}
       JFROG_USER: ${{ secrets.JFROG_USER }}
       JFROG_TOKEN: ${{ secrets.JFROG_TOKEN }}
-      GHP_USER: ${{ secrets.GHP_USER }}
-      GHP_TOKEN: ${{ secrets.GHP_TOKEN }}
       HEALTHZ_USERNAME: ${{ secrets.HEALTHZ_USERNAME }}
       HEALTHZ_PASSWORD: ${{ secrets.HEALTHZ_PASSWORD }}
 
