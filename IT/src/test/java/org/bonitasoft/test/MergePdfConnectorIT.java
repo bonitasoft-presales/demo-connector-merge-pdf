@@ -90,9 +90,11 @@ public class MergePdfConnectorIT extends AbstractTest {
                 .as("Merged PDF page count should equal sum of input PDF page counts (%d + %d)", pdf1PageCount, pdf2PageCount)
                 .isEqualTo(expectedPageCount);
 
-        // Complete the review task
+        // Complete the review task (task contract requires the merged document)
         logger.info("Completing task '{}'", REVIEW_TASK_NAME);
-        reviewTask.execute(walter);
+        reviewTask.execute(walter, ContractBuilder.newContract()
+                .fileInput("mergedDocumentDocumentInput", "/documents/mypdf1.pdf")
+                .build());
 
         // Wait for process to complete
         logger.info("Waiting for process to complete");
