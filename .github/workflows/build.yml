@@ -66,7 +66,19 @@ jobs:
       - set_bonita_dns
       - build_sca
     uses: bonitasoft-presales/presales_workflows/.github/workflows/reusable_deploy_sca.yml@v1.6.0
-    secrets: inherit
+    secrets:
+      licence_base64: ${{ secrets.LICENSE_V10_3_BASE_64 }}
+      AWS_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
+      AWS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECURITY_GROUP_ID: ${{ secrets.AWS_SECURITY_GROUP_ID }}
+      AWS_SSH_USER: ${{ secrets.AWS_SSH_USER }}
+      JFROG_USER: ${{ secrets.JFROG_USER }}
+      JFROG_TOKEN: ${{ secrets.JFROG_TOKEN }}
+      GHP_USER: ${{ secrets.GHP_USER }}
+      GHP_TOKEN: ${{ secrets.GHP_TOKEN }}
+      HEALTHZ_USERNAME: ${{ secrets.HEALTHZ_USERNAME }}
+      HEALTHZ_PASSWORD: ${{ secrets.HEALTHZ_PASSWORD }}
 
   deploy_UIB:
     needs:
